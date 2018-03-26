@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_exemplobasico"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Realizar Doação" />
+        <item
+            android:id="@+id/nav_chamaCadCasa"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="cadastrar ONG" />
+
+    </group>
+
+    <item android:title="Instituíções de Caridade">
+        <menu>
+            <item
+                android:id="@+id/nav_show_casa"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Encontrar Instituíção" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Confirmar Doação"
+                />
+
+        </menu>
+    </item>
+
+</menu>

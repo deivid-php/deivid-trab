@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RedeCari</string>
+
+    <string name="navigation_drawer_open">Abrir menu lateral</string>
+    <string name="navigation_drawer_close">Fechar menu lateral</string>
+
+    <string name="action_settings">Configuração</string>
+    <string name="title_activity_maps">MAPA</string>
+
+    <string name="facebook_app_id">426417094464108</string>
+    <string name="fb_login_protocol_scheme">fb426417094464108</string>
+    <string name="erro_login">Erro ao Logar</string>
+    <string name="instituições">Instituições de caridade na sua região</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="web_client_id">973216389106-pp9buir6q8ko3c6m8m2tpc7iq77dlfk1.apps.googleusercontent.com</string>
+</resources>

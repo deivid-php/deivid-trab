@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "973216389106",
+    "firebase_url": "https://meuappfirebase-19c55.firebaseio.com",
+    "project_id": "meuappfirebase-19c55",
+    "storage_bucket": "meuappfirebase-19c55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973216389106:android:c58d03e60b24fb1b",
+        "android_client_info": {
+          "package_name": "com.brasil.deivid_silva.firebase_crud_deivid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973216389106-pp9buir6q8ko3c6m8m2tpc7iq77dlfk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4q4NSmAyYzEgNZ650gieuiWTX-2SulY8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973216389106:android:e496ef0fe57ef2ef",
+        "android_client_info": {
+          "package_name": "com.bsbwebsites.deivid.filarapidahospital"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973216389106-jns1rr4jkmrt2ka5k7pqnr6mq1s4dq5k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bsbwebsites.deivid.filarapidahospital",
+            "certificate_hash": "8264cdf32497d26c117b391abb83b604bff0e0f1"
+          }
+        },
+        {
+          "client_id": "973216389106-pp9buir6q8ko3c6m8m2tpc7iq77dlfk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4q4NSmAyYzEgNZ650gieuiWTX-2SulY8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973216389106-pp9buir6q8ko3c6m8m2tpc7iq77dlfk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
