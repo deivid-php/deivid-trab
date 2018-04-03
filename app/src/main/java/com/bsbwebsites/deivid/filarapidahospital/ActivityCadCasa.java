@@ -38,6 +38,7 @@ public class ActivityCadCasa extends AppCompatActivity {
         edittexttelinst = (EditText) findViewById(R.id.edittexttelinst);
         list_instituicoes = (ListView) findViewById(R.id.list_instituicoes);
 
+
         inicializarFirebase();
         eventoDatabase();
 

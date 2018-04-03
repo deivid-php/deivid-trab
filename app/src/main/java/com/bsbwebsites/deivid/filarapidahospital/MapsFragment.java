@@ -14,6 +14,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -45,10 +46,16 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
 
 
         // Add a marker in Sydney and move the camera
-        LatLng recife = new LatLng(lat, lon);
-        mMap.addMarker(new MarkerOptions().position(recife).title("EU!!!!!"));
+        LatLng atual = new LatLng(lat, lon);
+        mMap.addMarker(new MarkerOptions().position(atual).title("Minha Localização"));
 
-        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(40).target(recife).build();
+        LatLng local1 = new LatLng(-16.02303876, -48.05966366);
+        mMap.addMarker(new MarkerOptions().position(local1).title("Casa Caridade Gama"));
+
+        LatLng local2 = new LatLng(-16.02996832, -48.02739132);
+        mMap.addMarker(new MarkerOptions().position(local2).title("Caridade Santa Maria"));
+
+        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(12).target(atual).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 

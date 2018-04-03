@@ -49,7 +49,6 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activitylayout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -63,12 +62,23 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
 
         ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
+
         textView = (TextView)findViewById(R.id.text_location);
+
         button = (Button)findViewById(R.id.button_location);
 
         button.setOnClickListener(this);
 
 
+
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            buildAlertMessageNoGps();
+
+        } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            getLocation();
+        }
 
 
     }
@@ -99,22 +109,22 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
             Location location2 = locationManager.getLastKnownLocation(LocationManager. PASSIVE_PROVIDER);
 
 
-            if (location1 != null) {
-                double latti = location1.getLatitude();
-                double longi = location1.getLongitude();
-                lat = location1.getLatitude();
-                lon = location1.getLongitude();
+            if (location != null) {
+                double latti = location.getLatitude();
+                double longi = location.getLongitude();
+                lat = location.getLatitude();
+                lon = location.getLongitude();
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
                 textView.setText("Sua localização atual é"+ "\n" + "Lattitude = " + lattitude
                         + "\n" + "Longitude = " + longitude);
 
-            } else  if (location != null) {
-                double latti = location.getLatitude();
-                double longi = location.getLongitude();
-                lat = location.getLatitude();
-                lon = location.getLongitude();
+            } else  if (location1 != null) {
+                double latti = location1.getLatitude();
+                double longi = location1.getLongitude();
+                lat = location1.getLatitude();
+                lon = location1.getLongitude();
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
@@ -160,6 +170,12 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
                 });
         final AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    public void startSecondActivity(View view) {
+
+        Intent intent2 = new Intent(this,ActivityLogin.class);
+        this.startActivity(intent2);
     }
 
 }
