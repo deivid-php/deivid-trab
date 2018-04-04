@@ -23,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 public class ActPrincipal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -74,6 +76,8 @@ public class ActPrincipal extends AppCompatActivity
         transaction.add(R.id.container, new MapsFragment(),"MapsFragment");
 
         transaction.commitAllowingStateLoss();
+
+        //list_instituicoes = (ListView) findViewById(R.id.list_instituicoes_show);
 
 
         FacebookSdk.sdkInitialize(getApplicationContext());

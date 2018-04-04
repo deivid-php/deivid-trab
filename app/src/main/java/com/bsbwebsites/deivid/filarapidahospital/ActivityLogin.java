@@ -1,5 +1,7 @@
 package com.bsbwebsites.deivid.filarapidahospital;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -53,8 +55,8 @@ public class ActivityLogin extends AppCompatActivity {
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser()!=null){
-                    Intent intent = new Intent(ActivityLogin.this, NewActivity.class);
+                if (firebaseAuth.getCurrentUser()!= null){
+                    Intent intent = new Intent(ActivityLogin.this, ActivityCadastrarItem.class);
                     startActivity(intent);
                 }
             }
@@ -101,7 +103,8 @@ public class ActivityLogin extends AppCompatActivity {
     protected void onStart(){
         super.onStart();
         mAuth.addAuthStateListener(authStateListener);
-       // FirebaseUser currentUser = mAuth.getCurrentUser();
+        Toast.makeText(getApplicationContext(),mAuth.toString(), Toast.LENGTH_LONG).show();
+        // FirebaseUser currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
     }
 

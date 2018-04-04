@@ -1,5 +1,7 @@
 package com.bsbwebsites.deivid.filarapidahospital;
 
+import com.google.android.gms.maps.model.LatLng;
+
 /**
  * Created by Silva on 21/03/2018.
  */
@@ -9,15 +11,27 @@ public class Casa {
     private String name;
     private String telefone;
     private String email;
+    private String Localizacao;
+
     public Casa(){
 
     }
 
-    public Casa(String name, String telefone, String email) {
+    public Casa(String name, String telefone, String email, String localizacao) {
         this.name = name;
         this.telefone = telefone;
         this.email = email;
+        this.Localizacao = localizacao;
     }
+
+    public String getLocalizacao() {
+        return Localizacao;
+    }
+
+    public void setLocalizacao(String localiza) {
+        Localizacao = localiza;
+    }
+
 
     public String getUid() {
         return Uid;
@@ -53,7 +67,6 @@ public class Casa {
 
     @Override
     public String toString() {
-        return "Instituição" +
-                ": " + name  ;
+        return " " + name  ;
     }
 }

@@ -43,6 +43,13 @@
         android:textColor="@color/colorPrimary"
         android:background="@color/com_facebook_button_background_color_focused"/>
 
+    <ListView
+        android:id="@+id/list_instituicoes_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        ></ListView>
+
 
     <Button
         android:id="@+id/button_location"
@@ -52,7 +59,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="146dp"
         android:text="PEGAR LOCALIZAÇÂO"
-        android:visibility="invisible"
+        android:visibility="visible"
         />
 
 
@@ -65,8 +72,9 @@
         android:textSize="16dp"
         android:layout_marginTop="400dp"
         android:text="teste"
-        android:visibility="invisible"
+        android:visibility="visible"
         />
+
 
 
 
@@ -77,8 +85,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_gravity="bottom|left"
-            android:layout_marginBottom="34dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginBottom="49dp"
+            android:layout_marginStart="10dp"
             android:backgroundTint="@android:color/holo_green_dark"
             android:text="Realizar Doação"
             android:textAlignment="center"

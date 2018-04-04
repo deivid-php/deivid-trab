@@ -1,5 +1,7 @@
 package com.bsbwebsites.deivid.filarapidahospital;
 
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,10 +21,16 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends ActPrincipal implements View.OnClickListener {
 
@@ -36,6 +44,8 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
 
     public static double lat;
     public static double lon;
+
+    public static String localizar;
 
     protected double lattitudeB;
     protected double longtudeB;
@@ -69,8 +79,7 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
 
         button.setOnClickListener(this);
 
-
-
+        localizar = getAddress(lat, lon);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
@@ -91,6 +100,9 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
 
         } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             getLocation();
+            String teste = getAddress(lat, lon);
+            textView.setText("Sua localização é"+ "\n" + "Lattitude = " + teste);
+            localizar = getAddress(lat, lon);
         }
     }
 //MUDEI PARA PUBLIC
@@ -117,8 +129,9 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                textView.setText("Sua localização atual é"+ "\n" + "Lattitude = " + lattitude
+                textView.setText("Sua localização é"+ "\n" + "Lattitude = " + lattitude
                         + "\n" + "Longitude = " + longitude);
+                localizar = getAddress(lat, lon);
 
             } else  if (location1 != null) {
                 double latti = location1.getLatitude();
@@ -128,8 +141,9 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                textView.setText("Sua localização atual é"+ "\n" + "Lattitude = " + lattitude
+                textView.setText("Sua localização é"+ "\n" + "Lattitude = " + lattitude
                         + "\n" + "Longitude = " + longitude);
+                localizar = getAddress(lat, lon);
 
 
             } else  if (location2 != null) {
@@ -140,8 +154,10 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                textView.setText("Sua localização atual é"+ "\n" + "Lattitude = " + lattitude
+                textView.setText("Sua localização é"+ "\n" + "Lattitude = " + lattitude
                         + "\n" + "Longitude = " + longitude);
+                localizar = getAddress(lat, lon);
+
 
             }else{
 
@@ -151,6 +167,7 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
 
         }
     }
+
 
     //PROTECTED
     public void buildAlertMessageNoGps() {
@@ -177,5 +194,30 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
         Intent intent2 = new Intent(this,ActivityLogin.class);
         this.startActivity(intent2);
     }
+
+    private String getAddress(double LATITUDE, double LONGITUDE) {
+        String strAdd = "";
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
+            if (addresses != null) {
+                Address returnedAddress = addresses.get(0);
+                StringBuilder strReturnedAddress = new StringBuilder("");
+
+                for (int i = 0; i <= returnedAddress.getMaxAddressLineIndex(); i++) {
+                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
+                }
+                strAdd = strReturnedAddress.toString();
+                Log.w("My Current address", strReturnedAddress.toString());
+            } else {
+                Log.w("My Current address", "No Address returned!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.w("My Current address", "Canont get Address!");
+        }
+        return strAdd;
+    }
+
 
 }

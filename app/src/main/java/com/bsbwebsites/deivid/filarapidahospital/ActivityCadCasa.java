@@ -2,12 +2,12 @@ package com.bsbwebsites.deivid.filarapidahospital;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,8 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import static com.bsbwebsites.deivid.filarapidahospital.MainActivity.localizar;
+
+
 public class ActivityCadCasa extends AppCompatActivity {
     EditText edittextinstit, edittextemailinst, edittexttelinst;
+    //LatLng atual;
     ListView list_instituicoes;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -37,7 +41,7 @@ public class ActivityCadCasa extends AppCompatActivity {
         edittextemailinst = (EditText) findViewById(R.id.edittextemailinst);
         edittexttelinst = (EditText) findViewById(R.id.edittexttelinst);
         list_instituicoes = (ListView) findViewById(R.id.list_instituicoes);
-
+        //atual  = new LatLng(12, 12);
 
         inicializarFirebase();
         eventoDatabase();
@@ -79,6 +83,7 @@ public class ActivityCadCasa extends AppCompatActivity {
         casa.setName(edittextinstit.getText().toString());
         casa.setEmail(edittextemailinst.getText().toString());
         casa.setTelefone(edittexttelinst.getText().toString());
+        casa.setLocalizacao(localizar);
         databaseReference.child("Casa").child(casa.getName()).setValue(casa);
         limparCampos();
 
@@ -88,6 +93,7 @@ public class ActivityCadCasa extends AppCompatActivity {
         edittextemailinst.setText("");
         edittextinstit.setText("");
         edittexttelinst.setText("");
+
     }
 
 
