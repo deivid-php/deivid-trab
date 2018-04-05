@@ -195,6 +195,7 @@ public class MainActivity extends ActPrincipal implements View.OnClickListener {
         this.startActivity(intent2);
     }
 
+    //metodo para pegar a lat e long e transformar em String
     private String getAddress(double LATITUDE, double LONGITUDE) {
         String strAdd = "";
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());

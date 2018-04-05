@@ -41,7 +41,6 @@ public class ActivityCadCasa extends AppCompatActivity {
         edittextemailinst = (EditText) findViewById(R.id.edittextemailinst);
         edittexttelinst = (EditText) findViewById(R.id.edittexttelinst);
         list_instituicoes = (ListView) findViewById(R.id.list_instituicoes);
-        //atual  = new LatLng(12, 12);
 
         inicializarFirebase();
         eventoDatabase();

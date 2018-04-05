@@ -58,6 +58,7 @@ public class ActivityLogin extends AppCompatActivity {
                 if (firebaseAuth.getCurrentUser()!= null){
                     Intent intent = new Intent(ActivityLogin.this, ActivityCadastrarItem.class);
                     startActivity(intent);
+                    Toast.makeText(getApplicationContext(), "Bem vindo de volta555 " + "!", Toast.LENGTH_LONG).show();
                 }
             }
         };
@@ -92,6 +93,21 @@ public class ActivityLogin extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), R.string.erro_login, Toast.LENGTH_SHORT).show();
             }
         });
+
+        //parei aqui
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            Toast.makeText(getApplicationContext(), "Bem vindo de volta " + "!", Toast.LENGTH_LONG).show();
+            //Intent intent = new Intent(this, ActivityCadastrarItem.class);
+            //startActivity(intent);
+            //finish();
+        } else {
+            Toast.makeText(getApplicationContext(), "Faça seu login  " + "!", Toast.LENGTH_LONG).show();
+
+            //Intent intent = new Intent(this, ActivityLogin.class);
+            //startActivity(intent);
+            //finish();
+        }
 
 
 
