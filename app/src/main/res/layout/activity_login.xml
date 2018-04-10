@@ -57,13 +57,21 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/side_nav_bar"
+                android:background="@color/bootstrap_brand_success"
                 android:onClick="Login"
                 android:text="entrar" />
 
 
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp" />
+
+            <com.facebook.login.widget.ProfilePictureView
+                android:id="@+id/login_button_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

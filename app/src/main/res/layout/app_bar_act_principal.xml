@@ -87,7 +87,7 @@
             android:layout_gravity="bottom|left"
             android:layout_marginBottom="49dp"
             android:layout_marginStart="10dp"
-            android:backgroundTint="@android:color/holo_green_dark"
+            android:backgroundTint="@color/bootstrap_brand_success"
             android:text="Realizar Doação"
             android:textAlignment="center"
             tools:layout_editor_absoluteX="147dp"

@@ -39,49 +39,38 @@
         </RelativeLayout>
 
         <EditText
-            android:id="@+id/etSeller"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="SellerName" />
-
-        <EditText
             android:id="@+id/etProd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="ProductName" />
+            android:hint="Nome do Produto"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/etDesc"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:ems="10"
+            android:hint="Descrição"
             android:inputType="textCapSentences|textMultiLine"
             android:maxLines="4"
-            android:scrollHorizontally="false"
-            android:text="Description" />
-
-        <Spinner
-            android:id="@+id/spinnerType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:scrollHorizontally="false" />
 
         <EditText
             android:id="@+id/etPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="price"
+            android:hint="Quantidade"
             android:inputType="numberDecimal" />
 
         <Button
             android:id="@+id/btnPush"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Enviar DOAÇÂO"
+            android:background="@drawable/side_nav_bar"
+            />
 
     </LinearLayout>
 

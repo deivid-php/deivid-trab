@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -50,7 +51,8 @@ public class ActivityCadastrarItem extends AppCompatActivity {
     RadioGroup rg;
     Button btnDisplay;
     Uri uri;
-    Spinner mySpinner;
+    EditText qtd;
+    EditText desc;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -65,7 +67,8 @@ public class ActivityCadastrarItem extends AppCompatActivity {
 
         rg = (RadioGroup) findViewById(R.id.radiogroup1);
         int selectedId = rg.getCheckedRadioButtonId();
-        mySpinner = (Spinner) findViewById(R.id.spinner_qtd_itens);
+        qtd = (EditText) findViewById(R.id.qtd_itens);
+        desc = (EditText) findViewById(R.id.etDesc);
 
 
         Toast.makeText(ActivityCadastrarItem.this, "seleção" + rg.getCheckedRadioButtonId(), Toast.LENGTH_LONG).show();

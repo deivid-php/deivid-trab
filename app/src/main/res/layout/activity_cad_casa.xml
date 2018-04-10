@@ -38,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="enviarfirebase"
+            android:background="@color/bootstrap_brand_success"
             android:text="ENVIAR" />
 
         <TextView

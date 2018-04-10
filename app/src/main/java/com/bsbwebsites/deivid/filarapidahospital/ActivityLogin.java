@@ -26,6 +26,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.BreakIterator;
+
 public class ActivityLogin extends AppCompatActivity {
 
     FirebaseDatabase database;
@@ -39,6 +41,7 @@ public class ActivityLogin extends AppCompatActivity {
 
     private LoginButton loginButton;
     private CallbackManager callbackManager;
+    RadioButton radioButton;
 
 
 
@@ -50,18 +53,43 @@ public class ActivityLogin extends AppCompatActivity {
         emailText = (EditText) findViewById(R.id.userEmail);
         passText = (EditText) findViewById(R.id.userSenha);
 
+        radioButton = (RadioButton) findViewById(R.id.radioButSoudoador);
+        RadioButton radioButton1 = (RadioButton) findViewById(R.id.radioButton2);
+
         mAuth = FirebaseAuth.getInstance();
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser()!= null){
+                if (firebaseAuth.getCurrentUser() != null) {
                     Intent intent = new Intent(ActivityLogin.this, ActivityCadastrarItem.class);
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(), "Bem vindo de volta555 " + "!", Toast.LENGTH_LONG).show();
                 }
             }
         };
+
+        //parei aqui
+        //mAuth.addAuthStateListener(authStateListener);
+        /*FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user != null) {
+            Toast.makeText(getApplicationContext(), "Bem vindo de volta " + "!", Toast.LENGTH_LONG).show();
+            goMainScreen();
+        } else if (authStateListener != null) {
+
+            Toast.makeText(getApplicationContext(), "Bem vindo de volta " + "2!", Toast.LENGTH_LONG).show();
+
+        } else {
+
+            Toast.makeText(getApplicationContext(), "Faça seu login  " + "!", Toast.LENGTH_LONG).show();
+
+            //Intent intent = new Intent(this, ActivityLogin.class);
+            //startActivity(intent);
+            //finish();
+        }*/
+
+
 
         callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton) findViewById(R.id.login_button);
@@ -71,21 +99,18 @@ public class ActivityLogin extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
 
-                RadioButton radioButton =(RadioButton)findViewById(R.id.radioButSoudoador);
-                RadioButton radioButton1 =(RadioButton)findViewById(R.id.radioButton2);
-
-                    if(radioButton.isChecked()){
-                        goMainScreen();
-                    }else {
-                        Toast.makeText(getApplicationContext(),"Confirme seu cadastro", Toast.LENGTH_LONG).show();
-                        goCasaScreen();
-                    }
+                if (radioButton.isChecked()) {
+                    goMainScreen();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Confirme seu cadastro", Toast.LENGTH_LONG).show();
+                    goCasaScreen();
+                }
 
             }
 
             @Override
             public void onCancel() {
-                Toast.makeText(getApplicationContext(),R.string.com_facebook_smart_login_confirmation_cancel, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.com_facebook_smart_login_confirmation_cancel, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -94,24 +119,11 @@ public class ActivityLogin extends AppCompatActivity {
             }
         });
 
-        //parei aqui
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            Toast.makeText(getApplicationContext(), "Bem vindo de volta " + "!", Toast.LENGTH_LONG).show();
-            //Intent intent = new Intent(this, ActivityCadastrarItem.class);
-            //startActivity(intent);
-            //finish();
-        } else {
-            Toast.makeText(getApplicationContext(), "Faça seu login  " + "!", Toast.LENGTH_LONG).show();
-
-            //Intent intent = new Intent(this, ActivityLogin.class);
-            //startActivity(intent);
-            //finish();
-        }
-
-
 
     }
+
+
+
 
 
 
@@ -119,10 +131,30 @@ public class ActivityLogin extends AppCompatActivity {
     protected void onStart(){
         super.onStart();
         mAuth.addAuthStateListener(authStateListener);
-        Toast.makeText(getApplicationContext(),mAuth.toString(), Toast.LENGTH_LONG).show();
-        // FirebaseUser currentUser = mAuth.getCurrentUser();
+        Toast.makeText(getApplicationContext(),mAuth.toString() + "amor teste", Toast.LENGTH_LONG).show();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
     }
+
+    /* private void updateUI(FirebaseUser user) {
+        //hideProgressDialog();
+        String mStatusTextView;
+
+        BreakIterator mDetailTextView;
+        if (user != null) {
+            mStatusTextView.setText(getString(R.string.google_status_fmt, user.getEmail()));
+            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+
+            findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
+        } else {
+            mStatusTextView.setText(R.string.signed_out);
+            mDetailTextView.setText(null);
+
+            findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
+            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
+        }
+    } */
 
     private void goMainScreen() {
         Intent intent = new Intent(this, ActivityCadastrarItem.class);

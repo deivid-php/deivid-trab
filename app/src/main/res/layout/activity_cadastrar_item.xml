@@ -75,34 +75,37 @@
                 android:text="Outros" />
         </RadioGroup>
 
-        <TextView
-            android:id="@+id/text_qtd"
+        <EditText
+            android:id="@+id/etDesc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Quantidade"
-            android:textAlignment="textEnd"
-            android:textColor="@android:color/background_dark" />
+            android:layout_height="80dp"
+            android:ems="10"
+            android:hint="Descrição"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="2"
+            android:scrollHorizontally="false"/>
 
-        <Spinner
-            android:id="@+id/spinner_qtd_itens"
+
+        <EditText
+            android:id="@+id/qtd_itens"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_orange_light"
-            android:entries="@array/qtd_itens"
-            android:textAlignment="textEnd" />
+            android:ems="10"
+            android:hint="Quantidade"
+            android:inputType="numberDecimal" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fotografar itens"
             android:textAlignment="center"
-            android:textColor="@android:color/background_dark" />
+            android:textColor="@color/bootstrap_gray_dark" />
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/bootstrap_brand_primary"
             android:contentDescription="Fotografar itens"
             app:srcCompat="@drawable/ic_menu_camera"
             android:onClick="fotografar"/>
@@ -112,7 +115,7 @@
             style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_green_dark"
+            android:backgroundTint="@color/bootstrap_brand_success"
             android:contentDescription="prosseguir com doação"
             android:onClick="enviarparafirebase"
             android:text="Prosseguir" />
@@ -121,7 +124,7 @@
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_red_dark"
+            android:backgroundTint="@color/bootstrap_brand_danger"
             android:onClick="signOut"
             android:text="Sair"
             android:textAlignment="center"
