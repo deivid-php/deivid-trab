@@ -187,7 +187,7 @@ public class ActivityCadastrarItem extends AppCompatActivity {
 
     }
 
-    public void enviarparafirebase(View view) {
+    protected void enviarparafirebase(View view) {
         ItemDoado itemdoado = new ItemDoado();
         itemdoado.setUid(UUID.randomUUID().toString());
         itemdoado.setClasse(rg.getCheckedRadioButtonId());
