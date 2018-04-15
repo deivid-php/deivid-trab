@@ -66,18 +66,18 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
         );
 
-        Casa casa = new Casa();
+        /*Casa casa = new Casa();
         LatLng atualCasa = new LatLng(lat, lon);
         mMap.addMarker(new MarkerOptions()
                 .position(atualCasa)
                 .title(casa.getName())
                 .snippet(casa.getEmail())
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
-        );
+        );*/
 
 
 
-                CameraPosition cameraPosition = new CameraPosition.Builder().zoom(12).target(atualCasa).build();
+                CameraPosition cameraPosition = new CameraPosition.Builder().zoom(12).target(atual).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 

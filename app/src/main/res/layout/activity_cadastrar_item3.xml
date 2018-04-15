@@ -14,63 +14,20 @@
         android:layout_height="match_parent"
         tools:context="com.bsbwebsites.deivid.filarapidahospital.ActivityCadastrarItem3">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-
-            <ImageButton
-                android:id="@+id/imageView6"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:scaleType="fitXY"
-                app:srcCompat="@android:drawable/ic_menu_add" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Tirar foto" />
-        </RelativeLayout>
-
-        <EditText
-            android:id="@+id/etProd"
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nome do Produto"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/etDesc"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:ems="10"
-            android:hint="Descrição"
-            android:inputType="textCapSentences|textMultiLine"
-            android:maxLines="4"
-            android:scrollHorizontally="false" />
-
-        <EditText
-            android:id="@+id/etPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Quantidade"
-            android:inputType="numberDecimal" />
+            android:text="SUA DOAÇÃO FOI REALIZADA E VOCÊ SERÁ NOTIFICADO QUANDO A CASA DE CARIDADE FOR BUSCAR A DOAÇÃO"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <Button
             android:id="@+id/btnPush"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enviar DOAÇÂO"
-            android:background="@drawable/side_nav_bar"
-            />
+            android:background="@color/bootstrap_brand_success"
+            android:text="INÍCIO"
+            android:onClick="Inicio1"/>
 
     </LinearLayout>
 

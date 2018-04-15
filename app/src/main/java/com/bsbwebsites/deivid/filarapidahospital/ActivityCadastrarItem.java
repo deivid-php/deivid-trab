@@ -206,7 +206,7 @@ public class ActivityCadastrarItem extends AppCompatActivity {
         databaseReference.child("ItemDoado").child(itemdoado.getUid()).setValue(itemdoado);
         limparCampos();
         Toast.makeText(ActivityCadastrarItem.this, "i" + uri, Toast.LENGTH_LONG).show();
-        Intent ActPrincipal = new Intent(this, ActivityCadastrarItem2.class);
+        Intent ActPrincipal = new Intent(this, ActivityCadastrarItem3.class);
         startActivity(ActPrincipal);
     }
 
