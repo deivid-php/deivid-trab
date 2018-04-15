@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.bsbwebsites.deivid.filarapidahospital.ActivityShowCasa">
-
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="left"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="35dp">
+        tools:context="com.bsbwebsites.deivid.filarapidahospital.ActivityShowCasa">
 
-        <TextView
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Instituições Cadastradas"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
 
-        <ListView
-            android:id="@+id/list_instituicoes1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/newListView">
+
+            </ListView>
 
 
-    </LinearLayout>
-</android.support.v7.widget.LinearLayoutCompat>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>

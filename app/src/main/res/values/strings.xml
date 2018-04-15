@@ -13,4 +13,5 @@
     <string name="instituições">Instituições de caridade perto de você</string>
     <string name="title_activity_maps2">Map</string>
     <string name="web_client_id">973216389106-pp9buir6q8ko3c6m8m2tpc7iq77dlfk1.apps.googleusercontent.com</string>
+    <string name="title_activity_confima_doacao">ConfimaDoacaoActivity</string>
 </resources>

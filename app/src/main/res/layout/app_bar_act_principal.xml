@@ -14,8 +14,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -59,7 +59,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="146dp"
         android:text="PEGAR LOCALIZAÇÂO"
-        android:visibility="visible"
+        android:visibility="invisible"
         />
 
 
@@ -72,7 +72,7 @@
         android:textSize="16dp"
         android:layout_marginTop="400dp"
         android:text="teste"
-        android:visibility="visible"
+        android:visibility="invisible"
         />
 
 

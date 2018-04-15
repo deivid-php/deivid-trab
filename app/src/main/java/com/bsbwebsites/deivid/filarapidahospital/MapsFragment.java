@@ -21,6 +21,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import static com.bsbwebsites.deivid.filarapidahospital.MainActivity.lat;
+import static com.bsbwebsites.deivid.filarapidahospital.MainActivity.localizar;
 import static com.bsbwebsites.deivid.filarapidahospital.MainActivity.lon;
 
 public class MapsFragment extends SupportMapFragment implements OnMapReadyCallback {
@@ -45,7 +46,7 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
 
-        // Add a marker in Sydney and move the camera
+        // Add a marker e move a camera
         LatLng atual = new LatLng(lat, lon);
         mMap.addMarker(new MarkerOptions().position(atual).title("Minha Localização"));
 
@@ -65,7 +66,18 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
         );
 
-        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(12).target(atual).build();
+        Casa casa = new Casa();
+        LatLng atualCasa = new LatLng(lat, lon);
+        mMap.addMarker(new MarkerOptions()
+                .position(atualCasa)
+                .title(casa.getName())
+                .snippet(casa.getEmail())
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+        );
+
+
+
+                CameraPosition cameraPosition = new CameraPosition.Builder().zoom(12).target(atualCasa).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 

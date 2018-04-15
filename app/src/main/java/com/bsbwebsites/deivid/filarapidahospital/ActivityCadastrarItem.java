@@ -107,6 +107,15 @@ public class ActivityCadastrarItem extends AppCompatActivity {
         startActivity(new Intent(this,ActivityLogin.class));
 
     }
+    public void Inicio(View view) {
+        Intent ActPrincipal = new Intent(this, ActPrincipal.class);
+        startActivity(ActPrincipal);
+    }
+
+    public void confirma(View view) {
+        Intent ActPrincipal = new Intent(this, ConfimaDoacaoActivity.class);
+        startActivity(ActPrincipal);
+    }
 
     public void fotografar (View view){
         Intent intent = new Intent(Intent.ACTION_PICK);
@@ -197,8 +206,10 @@ public class ActivityCadastrarItem extends AppCompatActivity {
         databaseReference.child("ItemDoado").child(itemdoado.getUid()).setValue(itemdoado);
         limparCampos();
         Toast.makeText(ActivityCadastrarItem.this, "i" + uri, Toast.LENGTH_LONG).show();
-
+        Intent ActPrincipal = new Intent(this, ActivityCadastrarItem2.class);
+        startActivity(ActPrincipal);
     }
+
 
     private void limparCampos() {
 

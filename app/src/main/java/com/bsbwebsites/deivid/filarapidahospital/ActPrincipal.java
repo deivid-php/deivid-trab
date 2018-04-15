@@ -145,7 +145,7 @@ public class ActPrincipal extends AppCompatActivity
             this.startActivity(intent2);
             return true;       }
         if (id == R.id.nav_show_casa) {
-            Intent intent2 = new Intent(this,ActivityShowCasa.class);
+            Intent intent2 = new Intent(this,ActivityCadastrarItem2.class);
             this.startActivity(intent2);
             return true;
         }

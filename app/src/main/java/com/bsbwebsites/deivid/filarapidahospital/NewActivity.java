@@ -29,4 +29,9 @@ public class NewActivity extends AppCompatActivity {
         Intent ActivityCadastrarItem = new Intent(this, ActivityCadastrarItem.class);
         startActivity(ActivityCadastrarItem);
     }
+
+    public void Inicio(View view) {
+        Intent ActPrincipal = new Intent(this, MainActivity.class);
+        startActivity(ActPrincipal);
+    }
 }
