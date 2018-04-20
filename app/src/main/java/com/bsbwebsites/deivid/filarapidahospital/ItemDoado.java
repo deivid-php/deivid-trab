@@ -12,12 +12,18 @@ public class ItemDoado {
     private int qtd;
     private String imgem;
     private String Localizacao;
+    private String nome;
+
+
+
+
 
 
     public ItemDoado() {
     }
 
-    public ItemDoado(int classe, int qtd, String imgem, String localizacao) {
+    public ItemDoado(String nome, int classe, int qtd, String imgem, String localizacao) {
+        this.nome = nome;
         this.classe = classe;
         this.qtd = qtd;
         this.imgem = imgem;
@@ -31,8 +37,6 @@ public class ItemDoado {
     public void setLocalizacao(String localiza) {
         Localizacao = localiza;
     }
-
-
 
     public String getUid() {
         return Uid;
@@ -64,6 +68,14 @@ public class ItemDoado {
 
     public void setimgem(String imgem) {
         this.imgem = imgem;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
 }
