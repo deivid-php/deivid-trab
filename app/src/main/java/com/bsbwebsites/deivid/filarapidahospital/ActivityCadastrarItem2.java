@@ -4,10 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +27,8 @@ public class ActivityCadastrarItem2 extends AppCompatActivity {
     private DatabaseReference myRef;
     private ListView listView;
     private ArrayList<String> mUserName = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +108,42 @@ public class ActivityCadastrarItem2 extends AppCompatActivity {
 
 
     }
+
+    public void onStart(){
+        super.onStart();
+        //create an instance of ListView
+        ListView chl=(ListView) findViewById(R.id.newListView);
+        //set multiple selection mode
+        chl.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        //supply data itmes to ListView
+
+        //set OnItemClickListener
+        chl.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // selected item
+                String selectedItem = ((TextView) view).getText().toString();
+                if(mUserName.contains(selectedItem))
+                    mUserName.remove(selectedItem); //remove deselected item from the list of selected items
+                else
+                    mUserName.add(selectedItem); //add selected item to the list of selected items
+
+            }
+
+        });
+    }
+/*
+    public void showSelectedItems(View view){
+        String selItems="";
+        for(String item:selectedItems){
+            if(selItems=="")
+                selItems=item;
+            else
+                selItems+="/"+item;
+        }
+        Toast.makeText(this, selItems, Toast.LENGTH_LONG).show();
+    }*/
+
+
 
 
     /* public void buttonClicked(View view){

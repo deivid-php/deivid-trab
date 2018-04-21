@@ -9,23 +9,25 @@
             android:icon="@drawable/ic_menu_send"
             android:title="Realizar Doação" />
         <item
-            android:id="@+id/nav_chamaCadCasa"
+            android:id="@+id/nav_show_casa"
             android:icon="@drawable/ic_menu_send"
-            android:title="cadastrar ONG" />
+            android:title="Encontrar Instituíção" />
+
 
     </group>
 
     <item android:title="Instituíções de Caridade">
         <menu>
-            <item
-                android:id="@+id/nav_show_casa"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Encontrar Instituíção" />
+
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Ver itens doados"
                 />
+            <item
+                android:id="@+id/nav_chamaCadCasa"
+                android:icon="@drawable/ic_menu_send"
+                android:title="cadastrar ONG" />
 
         </menu>
     </item>

@@ -88,7 +88,8 @@
         <activity
             android:name=".ConfimaDoacaoActivity"
             android:label="@string/title_activity_confima_doacao"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>
