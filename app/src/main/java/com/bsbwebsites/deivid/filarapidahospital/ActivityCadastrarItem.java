@@ -199,11 +199,12 @@ public class ActivityCadastrarItem extends AppCompatActivity {
     protected void enviarparafirebase(View view) {
         ItemDoado itemdoado = new ItemDoado();
         itemdoado.setUid(UUID.randomUUID().toString());
+        itemdoado.setNome(desc.getText().toString());
         itemdoado.setClasse(rg.getCheckedRadioButtonId());
         itemdoado.setQtd(1);
         itemdoado.setLocalizacao(localizar);
         itemdoado.setimgem(uri.getPath());
-        databaseReference.child("ItemDoado").child(itemdoado.getUid()).setValue(itemdoado);
+        databaseReference.child("ItemDoado").child(itemdoado.getNome()).setValue(itemdoado);
         limparCampos();
         Toast.makeText(ActivityCadastrarItem.this, "i" + uri, Toast.LENGTH_LONG).show();
         Intent ActPrincipal = new Intent(this, ActivityCadastrarItem3.class);

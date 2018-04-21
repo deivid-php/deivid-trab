@@ -29,11 +29,11 @@ public class ActivityShowCasa extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_casa);
+        setContentView(R.layout.activity_cadastrar_item2);
 
         // Write a message to the database
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("Casa");
+        myRef = database.getReference("ItemDoado");
 
        /* 14/03/2018 // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
@@ -76,9 +76,21 @@ public class ActivityShowCasa extends AppCompatActivity {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String value = dataSnapshot.getValue(String.class);
+                /* String value = dataSnapshot.getValue(String.class);
                 mUserName.add(value);
                 arrayAdapter.notifyDataSetChanged();
+                */
+
+                //if(dataSnapshot.hasChild("nome")) {
+                        dataSnapshot.child("nome").getChildren();
+                        String value = String.valueOf(dataSnapshot.child("nome").getValue());
+                        mUserName.add(value);
+                        arrayAdapter.notifyDataSetChanged();
+
+
+               //   }
+
+
             }
 
             @Override
@@ -125,5 +137,3 @@ public class ActivityShowCasa extends AppCompatActivity {
     } */
 
 }
-
-

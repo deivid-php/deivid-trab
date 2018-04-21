@@ -150,7 +150,7 @@ public class ActPrincipal extends AppCompatActivity
             return true;
         }
         if (id == R.id.nav_send) {
-            Intent intent2 = new Intent(this,MainActivity.class);
+            Intent intent2 = new Intent(this,ActivityShowCasa.class);
             this.startActivity(intent2);
             return true;
         }
